@@ -11,7 +11,7 @@ int main() {
 
   std::atomic<int32_t> sum{0};
 
-  static int NUM_THREADS = std::min(12, std::thread::hardware_concurrency());
+  static int NUM_THREADS = std::min<int>(12, std::thread::hardware_concurrency());
 
   std::cout << "Spawn into " << NUM_THREADS << " threads" << std::endl;
 

@@ -74,6 +74,9 @@ cc_binary(
     deps = [
         ":cpu",
     ],
+    linkopts = [
+        "-lpthread",
+    ],
 )
 
 cc_binary(
