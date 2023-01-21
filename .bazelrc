@@ -1,0 +1,11 @@
+build -c opt
+
+build --copt -DNDEBUG
+build --copt -O3
+build --copt -std=c++17
+
+build:m2 --copt -mcpu=apple-m1
+build:m2 --linkopt -fuse-ld=lld
+
+build:cascadelake --copt -march=cascadelake
+build:cascadelake --copt -mtune=cascadelake

@@ -1,0 +1,100 @@
+cc_library(
+    name = "fastmod",
+    srcs = [],
+    hdrs = ["third_party/fastmod/include/fastmod.h"],
+    includes = ["third_party/fastmod/include"],
+)
+
+cc_library(
+    name = "libdivide",
+    srcs = [],
+    hdrs = ["third_party/libdivide/libdivide.h"],
+    includes = ["third_party/libdivide"],
+)
+
+cc_library(
+    name = "cpu",
+    srcs = [
+    ],
+    hdrs = [
+        "cpu.h",
+        "common.h",
+    ],
+    deps = [
+        ":fastmod",
+        ":libdivide",
+    ]
+)
+
+cc_binary(
+    name = "recursive",
+    srcs = [
+        "recursive.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "loop",
+    srcs = [
+        "loop.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "with_fastmod",
+    srcs = [
+        "with_fastmod.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "with_libdivide",
+    srcs = [
+        "with_libdivide.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "multi_thread",
+    srcs = [
+        "multi_thread.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "vector",
+    srcs = [
+        "vector.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
+
+cc_binary(
+    name = "simd_arm_neon",
+    srcs = [
+        "simd_arm_neon.cpp",
+    ],
+    defines = [
+        "-DNEABLE_ARM_NEON",
+    ],
+    deps = [
+        ":cpu",
+    ],
+)
