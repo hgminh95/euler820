@@ -4,13 +4,14 @@
 #include <iostream>
 #include <vector>
 #include <thread>
+#include <atomic>
 
 int main() {
   std::cout << "N = " << N << std::endl;
 
   std::atomic<int32_t> sum{0};
 
-  static int NUM_THREADS = std::thread::hardware_concurrency();
+  static int NUM_THREADS = std::min(12, std::thread::hardware_concurrency());
 
   std::cout << "Spawn into " << NUM_THREADS << " threads" << std::endl;
 

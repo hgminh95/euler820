@@ -9,3 +9,8 @@ build:m2 --linkopt -fuse-ld=lld
 
 build:cascadelake --copt -march=cascadelake
 build:cascadelake --copt -mtune=cascadelake
+build:cascadelake --copt -ftree-vectorize
+
+build:zen --copt -march=native
+build:zen --copt -mtune=native
+build:zen --copt -ftree-vectorize
