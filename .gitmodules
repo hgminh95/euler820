@@ -1,3 +1,6 @@
 [submodule "third_party/libdivide"]
 	path = third_party/libdivide
 	url = https://github.com/ridiculousfish/libdivide.git
+[submodule "third_party/fastmod"]
+	path = third_party/fastmod
+	url = https://github.com/lemire/fastmod.git
