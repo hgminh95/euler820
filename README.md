@@ -1,6 +1,6 @@
 # euler820
 
-Code examples for this blog post: hgminh.dev/
+Code examples for this blog post: https://hgminh.dev/posts/solving-project-euler-820-on-different-hardwares-part-1/
 
 To run one example, try below command
 
