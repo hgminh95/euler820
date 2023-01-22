@@ -80,6 +80,19 @@ cc_binary(
 )
 
 cc_binary(
+    name = "multi_thread_with_unroll",
+    srcs = [
+        "multi_thread_with_unroll.cpp",
+    ],
+    deps = [
+        ":cpu",
+    ],
+    linkopts = [
+        "-lpthread",
+    ],
+)
+
+cc_binary(
     name = "unroll",
     srcs = [
         "unroll.cpp",
