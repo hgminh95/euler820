@@ -80,9 +80,9 @@ cc_binary(
 )
 
 cc_binary(
-    name = "vector",
+    name = "unroll",
     srcs = [
-        "vector.cpp",
+        "unroll.cpp",
     ],
     deps = [
         ":cpu",
