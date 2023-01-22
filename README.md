@@ -2,10 +2,17 @@
 
 Code examples for this blog post: hgminh.dev/
 
-To run the example, try below
+To run one example, try below command
 
 ```bash
-$ bazel build :recursive
+$ bazel run --config m2 --run_under "time " --copt -DM_N=100000000 :multi_thread_with_unroll
+```
 
-$ time ./bazel-bin/recursive
+To run the whole benchmark,
+
+```bash
+$ ./benchmark.sh <arch>
+
+$ ./benchmark.sh m2
+...
 ```
